@@ -1,0 +1,177 @@
+/* 全体 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ヘッダー */
+header {
+    position: relative;
+    background-color: #005bbb;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000; /* ヘッダーを上に */
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    display: none; /* PCでは非表示 */
+    z-index: 1001; /* ナビより上 */
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #005bbb;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* 初期非表示 */
+    z-index: 1000; /* iframeより上 */
+}
+
+.nav-menu button {
+    background-color: #fff;
+    color: #005bbb;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-menu button:hover {
+    background-color: #ddd;
+}
+
+/* メイン */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+.live-container, .chat-container {
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: visible; /* hidden → visible に変更 */
+    position: relative;
+    z-index: 0; /* iframe を下に */
+}
+
+.chat-container iframe {
+    height: 350px; /* コメント入力欄まで見える高さ */
+    width: 100%;
+    border: none;
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    z-index: 0; /* メニューの後ろ */
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #005bbb;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #003f7f;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: #eee;
+}
+
+/* レスポンシブ */
+@media (max-width: 800px) {
+    .hamburger-menu {
+        display: block;
+    }
+    iframe {
+        height: 250px;
+    }
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+/* -------------------------------
+   ダークモード用スタイル
+---------------------------------*/
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode header {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark-mode .nav-menu {
+    background-color: #444;
+}
+
+body.dark-mode .nav-menu button {
+    background-color: #666;
+    color: #fff;
+}
+
+body.dark-mode .nav-menu button:hover {
+    background-color: #888;
+}
+
+body.dark-mode .button-container button {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .button-container button:hover {
+    background-color: #777;
+}
+
+body.dark-mode .live-container iframe,
+body.dark-mode .chat-container iframe {
+    filter: brightness(0.9); /* 少し暗く表示 */
+}

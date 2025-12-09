@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北海道パワーリフティング生配信</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>北海道パワーリフティング 生配信</h1>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">&#9776;</div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav id="navMenu" class="nav-menu">
+        <button id="toggleTheme">ダークモード</button>
+        <button onclick="location.href='rireki.html'">アーカイブ</button>
+        <button onclick="location.href='https://h-power.sakura.ne.jp/2025touyagroup.pdf'">選手一覧</button>
+    </nav>
+</header>
+
+    <main>
+        <div class="live-container">
+            <iframe id="youtubeLive"
+                    src="https://www.youtube.com/embed/ZLhbDF1QmOo?si=HMro7UuO349RDiJ8"
+                    title="YouTube live stream" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="chat-container">
+            <h2>ライブチャット</h2>
+            <iframe
+                src="https://www.youtube.com/live_chat?v=ZLhbDF1QmOo&embed_domain=localhost"
+                frameborder="0">
+            </iframe>
+        </div>
+
+        <div class="button-container">
+            <button onclick="setLiveUrl('ZLhbDF1QmOo')">1面カメラ</button>
+            <button onclick="setLiveUrl('ZLhbDF1QmO2')">2面カメラ</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 北海道パワーリフティング連盟</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

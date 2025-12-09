@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北海道パワーリフティング アーカイブ</title>
+    <link rel="stylesheet" href="rireki.css">
+</head>
+<body>
+    <header>
+        <h1>北海道パワーリフティング アーカイブ</h1>
+    </header>
+
+        <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">&#9776;</div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav id="navMenu" class="nav-menu">
+        <button onclick="location.href='index.html'">メイン画面</button>
+        <button onclick="location.href='rireki.html'">アーカイブ</button>
+        <button onclick="location.href='https://h-power.sakura.ne.jp/2025touyagroup.pdf'">選手一覧</button>
+    </nav>
+</header>
+
+    <main>
+        <div class="archive-container">
+            <h2>過去のライブ配信</h2>
+            <div class="video-list">
+                <!-- 動画サムネイル＋タイトル -->
+                <div class="video-item" onclick="playArchive('A_vtN-DCqYw')">
+                    <img src="https://img.youtube.com/vi/A_vtN-DCqYw/0.jpg" alt="動画サムネ">
+                    <p>第3回北海道・東北ブロック ベンチプレス選手権大会</p>
+                </div>
+                <div class="video-item" onclick="playArchive('q8kKE_ilFPU')">
+                    <img src="https://img.youtube.com/vi/q8kKE_ilFPU/0.jpg" alt="動画サムネ">
+                    <p>[2日目] 第54回 北海道パワーリフティング選手権大会</p>
+                </div>
+                <div class="video-item" onclick="playArchive('U4507Nbr5lo')">
+                    <img src="https://img.youtube.com/vi/U4507Nbr5lo/0.jpg" alt="動画サムネ">
+                    <p>[1日目 A面] 第54回 北海道パワーリフティング選手権大会 </p>
+                </div>
+                <div class="video-item" onclick="playArchive('Pl5qUJJUEjg')">
+                    <img src="https://img.youtube.com/vi/Pl5qUJJUEjg/0.jpg" alt="動画サムネ">
+                    <p>[1日目 B面] 第54回 北海道パワーリフティング選手権大会 </p>
+                </div>
+                <div class="video-item" onclick="playArchive('i3IiWe4yACE')">
+                    <img src="https://img.youtube.com/vi/i3IiWe4yACE/0.jpg" alt="動画サムネ">
+                    <p>2025夏の北海道ベンチプレス選手権大会in北見</p>
+                </div>
+                <div class="video-item" onclick="playArchive('1PKFONy1zt4')">
+                    <img src="https://img.youtube.com/vi/1PKFONy1zt4/0.jpg" alt="動画サムネ">
+                    <p>2025春季北海道パワーリフティング選手権大会2日目</p>
+                </div>
+                <div class="video-item" onclick="playArchive('8L27f7X7xLU')">
+                    <img src="https://img.youtube.com/vi/8L27f7X7xLU/0.jpg" alt="動画サムネ">
+                    <p>2025春季北海道パワーリフティング選手権大会1日目</p>
+                </div>
+                <div class="video-item" onclick="playArchive('EtDEG7VJMCs')">
+                    <img src="https://img.youtube.com/vi/EtDEG7VJMCs/0.jpg" alt="動画サムネ">
+                    <p>第34回北海道ベンチプレス選手権大会</p>
+                </div>
+                <div class="video-item" onclick="playArchive('gLCd06B1DDc')">
+                    <img src="https://img.youtube.com/vi/gLCd06B1DDc/0.jpg" alt="動画サムネ">
+                    <p>北海道・東北ブロックベンチプレス選手権大会</p>
+                </div>
+                <div class="video-item" onclick="playArchive('293ZBtybZfU')">
+                    <img src="https://img.youtube.com/vi/293ZBtybZfU/0.jpg" alt="動画サムネ">
+                    <p>秋の北海道パワーリフティング選手権大会[2日目]</p>
+                </div>
+                <div class="video-item" onclick="playArchive('9SQStrtpmnA')">
+                    <img src="https://img.youtube.com/vi/9SQStrtpmnA/0.jpg" alt="動画サムネ">
+                    <p>秋の北海道パワーリフティング選手権大会[1日目]</p>
+                </div>
+                <div class="video-item" onclick="playArchive('fcqF1L861W8')">
+                    <img src="https://img.youtube.com/vi/fcqF1L861W8/0.jpg" alt="動画サムネ">
+                    <p>2023北海道ベンチプレス選手権大会</p>
+                </div>
+                <div class="video-item" onclick="playArchive('QiSNN5h449I')">
+                    <img src="https://img.youtube.com/vi/QiSNN5h449I/0.jpg" alt="動画サムネ">
+                    <p>春のパワーリフティング選手権大会2日目</p>
+                </div>
+                <div class="video-item" onclick="playArchive('0y_h0SnuKAA')">
+                    <img src="https://img.youtube.com/vi/0y_h0SnuKAA/0.jpg" alt="動画サムネ">
+                    <p>春のパワーリフティング選手権大会</p>
+                </div>
+                <!-- 追加動画もここに -->
+            </div>
+        </div>
+
+        <div class="player-container">
+            <h2>動画再生</h2>
+            <iframe id="archivePlayer" width="800" height="450"
+                src=""
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 北海道パワーリフティング協会SNS係</p>
+    </footer>
+
+    <script>
+        function playArchive(videoId) {
+            const player = document.getElementById('archivePlayer');
+            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            window.scrollTo({ top: player.offsetTop, behavior: 'smooth' });
+        }
+
+        // ハンバーガーメニュー開閉
+        const hamburger = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
