@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>北海道パワーリフティング生配信</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,37 +18,48 @@
         <button id="toggleTheme">ダークモード</button>
         <button onclick="location.href='rireki.html'">アーカイブ</button>
         <button onclick="location.href='https://h-power.sakura.ne.jp/2025touyagroup.pdf'">選手一覧</button>
+        <div id="snsShare" style="margin-top:10px;">
+        <button onclick="shareTwitter()">Twitter</button>
+        <button onclick="shareLine()">LINE</button>
+        <button onclick="shareFacebook()">Facebook</button>
+</div>
+
     </nav>
 </header>
 
     <main>
         <div class="live-container">
             <iframe id="youtubeLive"
-                    src="https://www.youtube.com/embed/ZLhbDF1QmOo?si=HMro7UuO349RDiJ8"
+                    src="https://www.youtube.com/embed/GbUxYMVRgHY?si=ONBrxVOXjf3kEhSr"
                     title="YouTube live stream" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
             </iframe>
         </div>
 
-        <div class="chat-container">
-            <h2>ライブチャット</h2>
-            <iframe
-                    src="https://www.youtube.com/live_chat?v=ZLhbDF1QmOo&embed_domain=violesse-company.github.io"
-                frameborder="0">
-            </iframe>
-        </div>
+<div class="chat-container">
+    <h2>ライブチャット</h2>
+    <div id="chat" style="height: 300px; overflow-y: scroll; padding: 10px;"></div>
+    <div id="pinnedContainer" style="margin-bottom:8px;"></div>
+<div id="commentList"></div>
+    <div style="display:flex; gap:5px; margin-top:5px;">
+        <input type="text" id="messageInput" placeholder="コメントを入力" style="flex:1; padding:5px;">
+        <button id="sendBtn">送信</button>
+    </div>
+</div>
 
-        <div class="button-container">
+
+    <!-- <div class="button-container">
             <button onclick="setLiveUrl('ZLhbDF1QmOo')">1面カメラ</button>
             <button onclick="setLiveUrl('ZLhbDF1QmO2')">2面カメラ</button>
         </div>
     </main>
+    -->
 
     <footer>
-        <p>&copy; 2025 北海道パワーリフティング連盟</p>
+        <p>&copy; 2025 北海道パワーリフティング協会競技普及委員会</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
