@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>北海道パワーリフティング アーカイブ</title>
     <link rel="stylesheet" href="rireki.css">
 </head>
@@ -16,6 +16,7 @@
 
     <!-- ナビゲーションメニュー -->
     <nav id="navMenu" class="nav-menu">
+        <button id="toggleTheme">ダークモード</button>
         <button onclick="location.href='index.html'">メイン画面</button>
         <button onclick="location.href='rireki.html'">アーカイブ</button>
         <button onclick="location.href='https://h-power.sakura.ne.jp/2025touyagroup.pdf'">選手一覧</button>
@@ -99,7 +100,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 北海道パワーリフティング協会SNS係</p>
+        <p>&copy; 2025 北海道パワーリフティング協会競技普及委員会</p>
     </footer>
 
     <script>
@@ -116,6 +117,18 @@
         hamburger.addEventListener('click', () => {
         navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
         });
+
+        // ダークモード切替
+const toggleBtn = document.getElementById('toggleTheme');
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = "デフォルトに戻す";
+    } else {
+        toggleBtn.textContent = "ダークモード";
+    }
+});
     </script>
 </body>
 </html>
