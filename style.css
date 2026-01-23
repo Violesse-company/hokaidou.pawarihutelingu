@@ -1,10 +1,21 @@
-/* 全体 */
+/* ページ全体の背景画像 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    color: #333; /* 文字色はそのまま */
+    background-image: url("画像.jpg"); /* 背景画像を指定 */
+    background-size: ;       /* 画面全体にフィット */
+    background-position: cover;  /* 中央に配置 */
 }
+
+/* ダークモードでも背景画像を保持 */
+body.dark-mode {
+    background-image: url("ダーク画像.jpg"); /* 同じ画像を使用 */
+    color: #fff; /* ダークモードの文字色だけ変更 */
+    background-size: cover;       /* 画面全体にフィット */
+    background-position: center;  /* 中央に配置 */
+}
+
 
 /* ヘッダー */
 header {
@@ -13,7 +24,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    z-index: 1000; /* ヘッダーを上に */
+    z-index: 1000; 
 }
 
 /* ハンバーガーメニュー */
@@ -23,8 +34,8 @@ header {
     right: 20px;
     font-size: 2em;
     cursor: pointer;
-    display: none; /* PCでは非表示 */
-    z-index: 1001; /* ナビより上 */
+    display: none;
+    z-index: 1001;
 }
 
 /* ナビゲーションメニュー */
@@ -38,8 +49,8 @@ header {
     background-color: #005bbb;
     padding: 10px;
     border-radius: 5px;
-    display: none; /* 初期非表示 */
-    z-index: 1000; /* iframeより上 */
+    display: none;
+    z-index: 1000;
 }
 
 .nav-menu button {
@@ -69,22 +80,26 @@ main {
     max-width: 800px;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     border-radius: 10px;
-    overflow: visible; /* hidden → visible に変更 */
+    overflow: visible;
     position: relative;
-    z-index: 0; /* iframe を下に */
+    z-index: 0;
 }
 
-.chat-container iframe {
-    height: 350px; /* コメント入力欄まで見える高さ */
-    width: 100%;
+#chat {
     border: none;
+    background-color: #fff;
+    width: 100%;
+    height: 350px;
+    overflow-y: scroll;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 iframe {
     width: 100%;
     height: 450px;
     position: relative;
-    z-index: 0; /* メニューの後ろ */
+    z-index: 0;
 }
 
 .button-container {
@@ -92,6 +107,18 @@ iframe {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* ボタン自体のサイズを大きく */
+.button-container button {
+    padding: 10px 10px;   /* 縦横の余白を増やす */
+    font-size: 1.2em;     /* 文字サイズを大きく */
+    border-radius: 8px;   /* 角丸を少し大きく */
+    cursor: pointer;
+    background-color: #005bbb;
+    color: white;
+    border: none;
+    transition: 0.3s;
 }
 
 button {
@@ -131,9 +158,14 @@ footer {
     }
 }
 
-/* -------------------------------
-   ダークモード用スタイル
----------------------------------*/
+html, body {
+  overflow-x: hidden; /* 横スクロール禁止 */
+  touch-action: pan-y; /* 縦スクロールのみ許可 */
+  -ms-touch-action: pan-y; /* 古いIE用 */
+  overscroll-behavior-x: none; /* 横方向のオーバースクロール防止 */
+}
+
+/* ダークモード */
 body.dark-mode {
     background-color: #121212;
     color: #fff;
@@ -171,7 +203,14 @@ body.dark-mode .button-container button:hover {
     background-color: #777;
 }
 
-body.dark-mode .live-container iframe,
-body.dark-mode .chat-container iframe {
-    filter: brightness(0.9); /* 少し暗く表示 */
+/* ライブコンテナは少し暗く */
+body.dark-mode .live-container iframe {
+    filter: brightness(0.9);
+}
+
+/* チャット部分は背景を暗く、文字色を白に固定 */
+body.dark-mode #chat {
+    background-color: #1e1e1e; /* 暗い背景 */
+    color: #fff;              /* 文字を白に */
+    filter: none;             /* brightness の影響を消す */
 }
