@@ -1,9 +1,19 @@
-/* 全体 */
+/* ページ全体の背景画像 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    color: #333; /* 文字色はそのまま */
+    background-image: url("画像.jpg"); /* 背景画像を指定 */
+    background-size: ;       /* 画面全体にフィット */
+    background-position: cover;  /* 中央に配置 */
+}
+
+/* ダークモードでも背景画像を保持 */
+body.dark-mode {
+    background-image: url("ダーク画像.jpg"); /* 同じ画像を使用 */
+    color: #fff; /* ダークモードの文字色だけ変更 */
+    background-size: cover;       /* 画面全体にフィット */
+    background-position: center;  /* 中央に配置 */
 }
 
 /* ハンバーガーメニュー */
@@ -128,4 +138,61 @@ footer {
     .player-container iframe {
         height: 300px;
     }
+}
+
+/* ダークモード */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode header {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode footer {
+    background-color: #474747;
+    color: #fff;
+}
+
+body.dark-mode .nav-menu {
+    background-color: #444;
+}
+
+body.dark-mode .nav-menu button {
+    background-color: #666;
+    color: #fff;
+}
+
+body.dark-mode .nav-menu button:hover {
+    background-color: #888;
+}
+
+body.dark-mode .button-container button {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .button-container button:hover {
+    background-color: #777;
+}
+
+/* ライブコンテナは少し暗く */
+body.dark-mode .live-container iframe {
+    filter: brightness(0.9);
+}
+
+/* チャット部分は背景を暗く、文字色を白に固定 */
+body.dark-mode #chat {
+    background-color: #1e1e1e; /* 暗い背景 */
+    color: #fff;              /* 文字を白に */
+    filter: none;             /* brightness の影響を消す */
+}
+
+html, body {
+  overflow-x: hidden; /* 横スクロール禁止 */
+  touch-action: pan-y; /* 縦スクロールのみ許可 */
+  -ms-touch-action: pan-y; /* 古いIE用 */
+  overscroll-behavior-x: none; /* 横方向のオーバースクロール防止 */
 }
