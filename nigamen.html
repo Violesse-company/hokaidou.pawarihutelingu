@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>北海道パワーリフティング生配信(BURST LIMIT専用)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>北海道パワーリフティング 生配信(BURST LIMIT専用)</h1>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">&#9776;</div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav id="navMenu" class="nav-menu">
+        <button id="toggleTheme">ダークモード</button>
+        <button onclick="location.href='rireki.html'">アーカイブ</button>
+        <button onclick="location.href='https://h-power.sakura.ne.jp/2025touyagroup.pdf'">選手一覧</button>
+        <div id="snsShare" style="margin-top:10px;">
+        <button onclick="shareTwitter()">Twitter</button>
+        <button onclick="shareLine()">LINE</button>
+        <button onclick="shareFacebook()">Facebook</button>
+</div>
+
+    </nav>
+</header>
+
+    <main>
+        <div class="live-container">
+            <iframe id="youtubeLive"
+                    src="https://www.youtube.com/embed/GbUxYMVRgHY?si=ONBrxVOXjf3kEhSr"
+                    title="YouTube live stream" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+<div class="chat-container">
+    <h2>ライブチャット</h2>
+    <div id="chat" style="height: 300px; overflow-y: scroll; padding: 10px;"></div>
+    <div id="pinnedContainer" style="margin-bottom:8px;"></div>
+<div id="commentList"></div>
+    <div style="display:flex; gap:5px; margin-top:5px;">
+        <input type="text" id="messageInput" placeholder="コメントを入力" style="flex:1; padding:5px;">
+        <button id="sendBtn">送信</button>
+    </div>
+</div>
+
+
+    <div class="button-container">
+            <button onclick="location.href='index.html'">1面カメラ</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 北海道パワーリフティング協会競技普及委員会</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
