@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     color: #333; /* 文字色はそのまま */
-    background-image: url("黒画面.jpg"); /* 背景画像を指定 */
+    background-image: url("ダーク画面.jpg"); /* 背景画像を指定 */
     background-size: ;       /* 画面全体にフィット */
     background-position: cover;  /* 中央に配置 */
 }
